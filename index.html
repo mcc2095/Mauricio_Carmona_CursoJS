@@ -3,11 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pre-entregable 2 // Simulador de compras</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Pre entregable 1 - Curso javascript</h1>
 
+    <header>
+        <h1>Simulador de compras</h1>
+        <input type="text" id="searchInput" placeholder="Buscar productos...">
+    </header>
+
+    <div class="lista-productos" id="listaProductos">
+        <h2>Selecciona Productos</h2>
+        
+        <div class="producto" data-nombre="Yerba" data-precio="3500">
+            <img src="assets/images/yerba.png" alt="Yerba" class="imagen-producto">
+            <span>Yerba</span>
+            <span>$3500</span>
+            <input type="number" id="cantidadYerba" placeholder="Cantidad" min="1">
+            <button class="agregarAlCarrito" data-nombre="Yerba" data-precio="3500">Agregar al Carrito</button>
+        </div>
+
+        <div class="producto" data-nombre="Arroz" data-precio="1200">
+            <img src="assets/images/arroz.jpg" alt="Arroz" class="imagen-producto">
+            <span>Arroz</span>
+            <span>$1200</span>
+            <input type="number" id="cantidadArroz" placeholder="Cantidad" min="1">
+            <button class="agregarAlCarrito" data-nombre="Arroz" data-precio="1200">Agregar al Carrito</button>
+        </div>
+
+        <div class="producto" data-nombre="Fideos" data-precio="850">
+            <img src="assets/images/fideos.jpg" alt="Fideos" class="imagen-producto">
+            <span>Fideos</span>
+            <span>$850</span>
+            <input type="number" id="cantidadFideos" placeholder="Cantidad" min="1">
+            <button class="agregarAlCarrito" data-nombre="Fideos" data-precio="850">Agregar al Carrito</button>
+        </div>
+
+        <div class="producto" data-nombre="Café" data-precio="5700">
+            <img src="assets/images/cafe.jfif" alt="Café" class="imagen-producto">
+            <span>Café</span>
+            <span>$5700</span>
+            <input type="number" id="cantidadTomate" placeholder="Cantidad" min="1">
+            <button class="agregarAlCarrito" data-nombre="cafe-cabrales" data-precio="5700">Agregar al Carrito</button>
+        </div>
+    </div>
+
+    <div>
+        <h2>Carrito de Compras</h2>
+        <ul id="listaCarrito"></ul>
+        <button id="vaciarCarrito">Vaciar Carrito</button>
+    </div>
 
     <script src="script.js"></script>
 </body>

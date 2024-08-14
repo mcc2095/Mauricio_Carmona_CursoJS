@@ -1,39 +1,61 @@
-const saludarUsuario = "Bienvenido a la lista de tareas";
-alert(saludarUsuario);
+const botonesAgregarCarrito = document.querySelectorAll('.agregarAlCarrito');
+const listaCarrito = document.getElementById('listaCarrito');
+const botonVaciarCarrito = document.getElementById('vaciarCarrito');
+const campoBusqueda = document.getElementById('searchInput');
+const listaProductos = document.getElementById('listaProductos');
 
-let listaDeTareas = [];
-let nuevaTarea;
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-function agregarTarea() {
-    nuevaTarea = prompt("Ingresa una nueva tarea:");
-    if (nuevaTarea) {
-        listaDeTareas.push(nuevaTarea);
-        alert(`Tarea "${nuevaTarea}" agregada.`);
+function mostrarCarrito() {
+    listaCarrito.innerHTML = '';
+    carrito.forEach((item) => {
+        const li = document.createElement('li');
+        const totalPrecio = item.precio * item.cantidad;
+        li.textContent = `${item.nombre} - $${item.precio} x ${item.cantidad} = $${totalPrecio}`;
+        listaCarrito.appendChild(li);
+    });
+}
+
+function agregarProducto(event) {
+    const boton = event.target;
+    const nombre = boton.getAttribute('data-nombre');
+    const precio = parseFloat(boton.getAttribute('data-precio'));
+    const campoCantidad = document.getElementById(`cantidad${nombre}`);
+    const cantidad = parseInt(campoCantidad.value);
+
+    if (cantidad > 0) {
+        const producto = { nombre, precio, cantidad };
+        carrito.push(producto);
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        mostrarCarrito();
+        campoCantidad.value = '';
     } else {
-        alert("Tarea no válida.");
+        alert('Por favor, ingrese una cantidad válida.');
     }
 }
 
-function mostrarTareas() {
-    console.log("Lista de tareas:");
-    for (let i = 0; i < listaDeTareas; i++) {
-        console.log(`${i + 1}. ${listaDeTareas[i]}`);
-    }
-    alert("Ver consola");
+function vaciarCarrito() {
+    carrito = [];
+    localStorage.removeItem('carrito');
+    mostrarCarrito();
 }
 
-while (true) {
-    let elección = prompt("Elige una opción: \n1. Agregar tarea \n2. Mostrar tareas \n3. Salir");
+function filtrarProductos() {
+    const textoBusqueda = campoBusqueda.value.toLowerCase();
+    const productos = document.querySelectorAll('.producto');
 
-    if (elección === '1') {
-        agregarTarea();
-    } else if (elección === '2') {
-        mostrarTareas();
-    } else if (elección === '3') {
-        if (confirm("¿Estás seguro de que quieres salir?")) {
-            break;
+    productos.forEach(producto => {
+        const nombre = producto.getAttribute('data-nombre').toLowerCase();
+        if (nombre.includes(textoBusqueda)) {
+            producto.style.display = 'block';
+        } else {
+            producto.style.display = 'none';
         }
-    } else {
-        alert("Opción no válida.");
-    }
+    });
 }
+
+botonesAgregarCarrito.forEach(boton => boton.addEventListener('click', agregarProducto));
+botonVaciarCarrito.addEventListener('click', vaciarCarrito);
+campoBusqueda.addEventListener('input', filtrarProductos);
+
+mostrarCarrito();
