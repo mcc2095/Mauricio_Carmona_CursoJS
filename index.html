@@ -3,58 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pre-entregable 2 // Simulador de compras</title>
+    <title>Proyecto Final</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <header>
-        <h1>Simulador de compras</h1>
-        <input type="text" id="searchInput" placeholder="Buscar productos...">
+        <h1>Supermercado Mayorista</h1>
+        <div class="desplegable">
+            <button id="botonCategorias">Categorías</button>
+            <div id="menuCategorias" class="contenido-desplegable"></div>
+        </div>
+        <input type="text" id="buscarProducto" placeholder="Buscar productos...">
+        <h2>Los mejores precios y ofertas los encontras aquí!!</h2>
     </header>
 
-    <div class="lista-productos" id="listaProductos">
-        <h2>Selecciona Productos</h2>
-        
-        <div class="producto" data-nombre="Yerba" data-precio="3500">
-            <img src="assets/images/yerba.png" alt="Yerba" class="imagen-producto">
-            <span>Yerba</span>
-            <span>$3500</span>
-            <input type="number" id="cantidadYerba" placeholder="Cantidad" min="1">
-            <button class="agregarAlCarrito" data-nombre="Yerba" data-precio="3500">Agregar al Carrito</button>
-        </div>
-
-        <div class="producto" data-nombre="Arroz" data-precio="1200">
-            <img src="assets/images/arroz.jpg" alt="Arroz" class="imagen-producto">
-            <span>Arroz</span>
-            <span>$1200</span>
-            <input type="number" id="cantidadArroz" placeholder="Cantidad" min="1">
-            <button class="agregarAlCarrito" data-nombre="Arroz" data-precio="1200">Agregar al Carrito</button>
-        </div>
-
-        <div class="producto" data-nombre="Fideos" data-precio="850">
-            <img src="assets/images/fideos.jpg" alt="Fideos" class="imagen-producto">
-            <span>Fideos</span>
-            <span>$850</span>
-            <input type="number" id="cantidadFideos" placeholder="Cantidad" min="1">
-            <button class="agregarAlCarrito" data-nombre="Fideos" data-precio="850">Agregar al Carrito</button>
-        </div>
-
-        <div class="producto" data-nombre="Café" data-precio="5700">
-            <img src="assets/images/cafe.jfif" alt="Café" class="imagen-producto">
-            <span>Café</span>
-            <span>$5700</span>
-            <input type="number" id="cantidadTomate" placeholder="Cantidad" min="1">
-            <button class="agregarAlCarrito" data-nombre="cafe-cabrales" data-precio="5700">Agregar al Carrito</button>
-        </div>
-    </div>
-
-    <div>
-        <h2>Carrito de Compras</h2>
-        <ul id="listaCarrito"></ul>
+    <div id="iconoCarrito">🛒</div>
+    <div id="carrito">
+        <ul></ul>
         <button id="vaciarCarrito">Vaciar Carrito</button>
+        <button id="confirmarCompra">Confirmar Compra</button>
+        <div id="total"></div>
     </div>
 
-    <script src="script.js"></script>
+    <div class="contenedor-productos" id="listaDeProductos"></div>
+
+    
+    <script src="app.js"></script>
+
 </body>
 </html>

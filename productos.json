@@ -1,0 +1,22 @@
+{
+    "categorias": ["Ofertas", "Almacén", "Bebidas", "Congelados", "Hogar"],
+    "productos": [
+        { "nombre": "Combo Coca-Cola + Fernet Branca", "descripcion": "Combo Coca-Cola 2.25L y Fernet Branca 750Ml", "precio": 8500, "categoria": "Ofertas", "imagen": "assets/images/ofertas/fernet_coca.jpg" },
+        { "nombre": "Yerba Andresito", "descripcion": "Yerba mate x 1KG", "precio": 3500, "categoria": "Almacén", "imagen": "assets/images/almacén/yerba.png" },
+        { "nombre": "Arroz", "descripcion": "Arroz largo fino x 500gr", "precio": 1200, "categoria": "Almacén", "imagen": "assets/images/almacén/arroz.jpg" },
+        { "nombre": "Fideos", "descripcion": "Fideos spaghetti x 500gr", "precio": 850, "categoria": "Almacén", "imagen": "assets/images/almacén/fideos.jpg" },
+        { "nombre": "Café Cabrales", "descripcion": "Café en grano x 500gr", "precio": 5700, "categoria": "Almacén", "imagen": "assets/images/almacén/cafe.jfif" },
+        {"nombre": "Gaseosa Manaos sabor Cola", "descripcion": "Gaseosa Manaos x 3L", "precio": 1400, "categoria": "Bebidas", "imagen": "assets/images/bebidas/manaos-cola-3L.jpg" },
+        {"nombre": "Gaseosa Coca Cola", "descripcion": "Coca Cola sabor Original x 3L", "precio": 2800, "categoria": "Bebidas", "imagen": "assets/images/bebidas/coca cola 1.5L.jpg" },
+        {"nombre": "Fernet Branca", "descripcion": "Branca x 750ml", "precio": 8000, "categoria": "Bebidas", "imagen": "assets/images/bebidas/branca750.jpg" },
+        {"nombre": "Cerveza Sol pack x6", "descripcion": "Cerveza Sol x 350ml", "precio": 4400, "categoria": "Bebidas", "imagen": "assets/images/bebidas/cerveza_sol_pack6.jpg" },
+        { "nombre": "Patitas pack Familiar", "descripcion": "Patitas sabor espinaca x 1kg", "precio": 2600, "categoria": "Congelados", "imagen": "assets/images/congelados/patitas espinaca.jpg" },
+        { "nombre": "Paty Clásico x4 u", "descripcion": "Hamburguesas de carne x 120gr c/u", "precio": 1599, "categoria": "Congelados", "imagen": "assets/images/congelados/paty x4.png" },
+        { "nombre": "Super promo Paty Clásico x12 u", "descripcion": "Hamburguesas de carne x 150gr c/u", "precio": 12399, "categoria": "Congelados", "imagen": "assets/images/congelados/paty x12.jpg" },
+        { "nombre": "Pizza Congelada", "descripcion": "Pizza con jamón, queso y hierbas finas pre cocido", "precio": 7200, "categoria": "Congelados", "imagen": "assets/images/congelados/pizza congelada.jpg" },
+        { "nombre": "Aspiradora ATMA", "descripcion": "Aspiradora atma 2000w Hiper Ultra Mega, aspira hasta tu alma", "precio": 15800, "categoria": "Hogar", "imagen": "assets/images/hogar/aspiradora atma.jpg" },
+        { "nombre": "Colchón 2 plazas Flexigom", "descripcion": "Colchón de Espuma super resistente, hasta 150kg por lado", "precio": 39000, "categoria": "Hogar", "imagen": "assets/images/hogar/colchon2plazas.jpg" },
+        { "nombre": "Mesa de Madera", "descripcion": "Mesa de madera barnizada color marrón", "precio": 16300, "categoria": "Hogar", "imagen": "assets/images/hogar/mesa de madera.jpg" },
+        { "nombre": "Silla Mecedora", "descripcion": "Silla mecedora tapizado premium color gris", "precio": 49999, "categoria": "Hogar", "imagen": "assets/images/hogar/silla mecedora.jpg" }
+    ]
+}

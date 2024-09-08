@@ -1,54 +1,117 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
     margin: 0;
-    padding: 20px;
-    text-align: center;
+    padding: 0;
+    background-color: #ceb3b3;
 }
 
 header {
-    background-color: #007bff;
+    background-color: #333;
     color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-#searchInput {
     padding: 10px;
-    width: 250px;
-    margin-top: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-h1 {
+header h1 {
     margin: 0;
 }
 
-.lista-productos {
+@keyframes saltar {
+        from {
+          transform: translate(0);
+        }
+        to {
+          transform: translateY(-5px);
+        }
+    }
+
+h2{
+    display: flex;
+    font-family: "PoetsenOne-Regular";
+    font-size: 50px;
+    justify-content: center;
+    padding: 2rem;
+    animation: saltar 0.3s infinite;
+    transform: translateY(0);
+}
+
+#buscarProducto {
+    width: 80%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.desplegable {
+    text-align: left;
+    padding: 10px;
+    position: absolute;
+}
+
+#botonCategorias {
+    display: block; 
+    margin: 0; 
+    padding: 10px;
+    background-color: #1a8033;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#menuCategorias {
+    position: absolute; 
+    top: 100%; 
+    left: 0; 
+    background: rgb(199, 195, 197);
+    border: 1px solid #e1e0e4;
+    border-radius: 5px;
+    display: none;
+    width: 200px;
+    z-index: 1000;
+}
+
+#menuCategorias a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+#menuCategorias a:hover {
+    background: #f4f4f4;
+}
+
+.contenedor-productos {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 20px;
+    padding: 20px;
 }
 
 .producto {
     background-color: white;
     border: 1px solid #ddd;
-    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     margin: 10px;
-    width: 220px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
     text-align: center;
-    transition: transform 0.2s;
-}
-
-.producto:hover {
-    transform: scale(1.05);
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .imagen-producto {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
     margin-bottom: 10px;
 }
 
@@ -57,47 +120,87 @@ h1 {
     margin: 5px 0;
 }
 
-.producto input {
-    width: 60px;
-    padding: 5px;
-}
-
 .producto button {
+    margin-top: 10px;
     background-color: #28a745;
     color: white;
     border: none;
-    padding: 8px 15px;
+    padding: 10px;
+    border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;
 }
 
 .producto button:hover {
     background-color: #218838;
 }
 
-#listaCarrito {
-    list-style-type: none;
-    padding: 0;
-    margin: 20px 0;
-    text-align: left;
+#iconoCarrito {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    padding: 10px;
+    z-index: 1000;
 }
 
-#listaCarrito li {
-    background-color: white;
+#carrito {
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    background: white;
     border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 300px;
+    display: none;
+    z-index: 1000;
+}
+
+#carrito ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#carrito ul li {
+    margin-bottom: 10px;
+}
+
+#carrito #total {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
     padding: 10px;
-    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
 }
 
 #vaciarCarrito {
     background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-top: 10px;
 }
 
 #vaciarCarrito:hover {
     background-color: #c82333;
+}
+
+#confirmarCompra {
+    background-color: #007bff;
+}
+
+#confirmarCompra:hover {
+    background-color: #0069d9;
 }
